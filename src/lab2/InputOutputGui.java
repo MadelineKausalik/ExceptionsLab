@@ -21,6 +21,12 @@ public class InputOutputGui {
         String lastName = "";
         lastName = nameService.extractLastName(fullName);
   
+        try {
+            lastName = nameService.extractLastName(fullName);
+        } catch (IllegalArgumentException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        
         String msg = "Your last name is: " + lastName;
         JOptionPane.showMessageDialog(null, msg);
         
